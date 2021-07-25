@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <app-score-area :score="score"></app-score-area>
-    <component :is="currentComponent" v-bind="{'selectedHand':selectedHand,'score':score,'currentComponent':currentComponent}"></component>
+    <h3>{{selectedHand}}</h3>
+    <app-score-area></app-score-area>
+    <component :is="currentComponent"></component>
   </div>
 </template>
 

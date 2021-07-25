@@ -13,6 +13,7 @@ export default {
     methods:{
         setSelectedHand(val){
             this.selectedHand=val;
+            console.log(this.selectedHand);
         }
     }
 }
