@@ -7,15 +7,19 @@
 
 <script>
 export default {
-    props:["selectedHand","currentComponent"],
     methods:{
         controlStatus(){
-            if(this.selectedHand!=null){
-                this.currentComponent="app-win-or-defeat"
+            if(this.selectedHandValue!=null){
+                this.$store.commit("setCurrentComponent","app-win-or-defeat");
             }
             else{
-                alert(this.selectedHand);
+                alert(this.selectedHandValue);
             }
+        },
+    },
+    computed:{
+        selectedHandValue(){
+            return this.$store.getters.getSelectedHand;
         }
     }
 }

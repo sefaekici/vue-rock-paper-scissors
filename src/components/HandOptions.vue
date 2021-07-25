@@ -1,19 +1,22 @@
 <template>
     <div class="hand-options">
-        <button @click="setSelectedHand('paper')" :class="{'selected-card':selectedHand=='paper'}"><img src="../assets/paper.png" alt="paper"></button>
-        <button @click="setSelectedHand('rock')" :class="{'selected-card':selectedHand=='rock'}"><img src="../assets/rock.png" alt="rock"></button>
-        <button @click="setSelectedHand('scissors')" :class="{'selected-card':selectedHand=='scissors'}"><img src="../assets/scissors.png" alt="scissors"></button>
+        <button @click="setSelectedHand('paper')" :class="{'selected-card':selectedHandValue=='paper'}"><img src="../assets/paper.png" alt="paper"></button>
+        <button @click="setSelectedHand('rock')" :class="{'selected-card':selectedHandValue=='rock'}"><img src="../assets/rock.png" alt="rock"></button>
+        <button @click="setSelectedHand('scissors')" :class="{'selected-card':selectedHandValue=='scissors'}"><img src="../assets/scissors.png" alt="scissors"></button>
     </div>
 </template>
 
 
 <script>
 export default {
-    props:["selectedHand"],
     methods:{
         setSelectedHand(val){
-            this.selectedHand=val;
-            console.log(this.selectedHand);
+            this.$store.commit("setSelectedHand",val);
+        }
+    },
+    computed:{
+        selectedHandValue(){
+            return this.$store.getters.getSelectedHand;
         }
     }
 }

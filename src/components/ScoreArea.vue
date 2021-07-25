@@ -12,7 +12,11 @@
 
 <script>
 export default {
-    props:["score"]
+    computed:{
+        score(){
+            return this.$store.getters.getScore;
+        }
+    }
 }
 </script>
 
