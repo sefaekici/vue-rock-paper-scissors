@@ -18,12 +18,12 @@ export const store=new Vuex.Store({
             return state.selectedHand;
         },
         getCurrentComponent(state){
-            return state.getCurrentComponent;
+            return state.currentComponent;
         }
     },
     mutations:{
        setScore(state,payload){
-           state.score=payload;
+           state.score+=payload;
        },
        setSelectedHand(state,payload){
            state.selectedHand=payload;
