@@ -5,11 +5,16 @@
       </div>
       <div class="score">
           <span>SCORE</span>
-          <h3>15</h3>
+          <h3>{{score}}</h3>
       </div>
     </div>
 </template>
 
+<script>
+export default {
+    props:["score"]
+}
+</script>
 
 <style lang="scss" scoped>
     .score-area{

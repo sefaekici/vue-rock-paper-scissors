@@ -1,15 +1,13 @@
 <template>
   <div id="app">
-    <app-score-area></app-score-area>
-    <app-hand-options :selectedHand="selectedHand"></app-hand-options>
-    <app-confirm-button></app-confirm-button>
+    <app-score-area :score="score"></app-score-area>
+    <app-select-hand :selectedHand="selectedHand"></app-select-hand>
   </div>
 </template>
 
 <script>
 import ScoreArea from "./components/ScoreArea.vue"
-import HandOptions from "./components/HandOptions.vue"
-import ConfirmButton from "./components/ConfirmButton.vue"
+import SelectHand from "./components/SelectHand.vue"
 export default {
   data(){
     return{
@@ -19,8 +17,7 @@ export default {
   },
   components:{
     appScoreArea:ScoreArea,
-    appHandOptions:HandOptions,
-    appConfirmButton:ConfirmButton
+    appSelectHand:SelectHand,
   }
 }
 </script>

@@ -5,12 +5,20 @@
     
 </template>
 
-
+<script>
+export default {
+    props:["selectedHand"],
+}
+</script>
 
 
 <style lang="scss" scoped>
      .done-button{
+         width: 100%;
          margin-top: 1.7rem;
+         display: flex;
+         align-items: center;
+         justify-content: center;
          button{
              cursor: pointer;
              width: 200px;
