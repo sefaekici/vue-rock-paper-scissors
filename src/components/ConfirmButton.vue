@@ -24,14 +24,14 @@ export default {
              width: 200px;
              height: 60px;
              border-radius: 5px;
-             background: #07689F;
+             background: #52616B;
              color: #fff;
              font-size: 20px;
              border: none;
              transition: background 0.4s,color 0.4s;
              &:hover{
                  background: #fff;
-                 color: #07689F;
+                 color: #52616B;
              }
          }
      }
