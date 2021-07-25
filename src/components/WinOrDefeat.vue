@@ -1,5 +1,13 @@
 <template>
-    <div class="status-component">{{winStatus}}</div>
+    <div class="status-component">
+        <h3>{{winStatus}}</h3>
+        <div class="selections">
+            <span><strong>Computer Select:  </strong>{{computerHand | getUpperCase}}</span>
+            <br>
+            <span><strong>User Select:  </strong>  {{selectedHand | getUpperCase}}</span>
+        </div>
+        <button @click="setCurrentComponent()">Play Again</button>
+    </div>
 </template>
 
 
@@ -11,9 +19,14 @@ export default {
         return{
             computerHand:null,
             winStatus:null,
+
         }
     },
     methods:{
+        setCurrentComponent(){
+            this.$store.commit("setCurrentComponent","app-select-hand");
+            this.$store.commit("setSelectedHand",null);
+        },
         setComputerHand(){
             let number=Math.floor(Math.random()*3);
             if(number==0){
@@ -47,6 +60,51 @@ export default {
         selectedHand(){
             return this.$store.getters.getSelectedHand;
         }
+    },
+    filters:{
+        getUpperCase(val){
+            return val.toUpperCase();
+        }
     }
 }
 </script>
+
+
+
+<style lang="scss" scoped>
+.status-component{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    h3{
+        font-size: 40px;
+        text-align: center;
+        margin-bottom:15px;
+        color:#053742;
+    }
+
+    .selections{
+        margin-bottom: 15px;
+        font-size: 22px;
+        strong{
+            font-size: 25px;
+        }
+    }
+
+    button{
+        width: 100%;
+        height: 60px;
+        font-size: 20px;
+        background: #053742;
+        color:#fff;
+        border:none;
+        border-radius: 10px;
+        cursor: pointer;
+        transition:color .5s,background .5s;
+        &:hover{
+            color:#053742;
+            background: #fff;
+        }
+    }
+}
+</style>

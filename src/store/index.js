@@ -23,7 +23,7 @@ export const store=new Vuex.Store({
     },
     mutations:{
        setScore(state,payload){
-           state.score+=payload;
+            state.score+=payload;
        },
        setSelectedHand(state,payload){
            state.selectedHand=payload;
