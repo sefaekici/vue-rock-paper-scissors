@@ -7,7 +7,7 @@
 
 <script>
 export default {
-    props:["selectedHand"],
+    props:["selectedHand","score"],
     data(){
         return{
             computerHand:null,
@@ -32,14 +32,17 @@ export default {
             }
             else if((this.selectedHand=="rock" && this.computerHand=="paper") || (this.selectedHand=='paper' && this.computerHand=='scissors') || (this.selectedHand=="scissors" && this.computerHand=="rock")){
                 this.winStatus="Lose!"
+                this.score-=1;
             }
             else{
                 this.winStatus="Win!"
+                this.score+=1;
             }
         }
     },
     mounted(){
         this.setComputerHand();
+        this.setWinStatus();
     }
 }
 </script>

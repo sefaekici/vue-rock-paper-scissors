@@ -1,13 +1,23 @@
 <template>
     <div class="done-button">
-        <button>CONFIRM</button>
+        <button @click="controlStatus()">CONFIRM</button>
     </div>
     
 </template>
 
 <script>
 export default {
-    props:["selectedHand"],
+    props:["selectedHand","currentComponent"],
+    methods:{
+        controlStatus(){
+            if(this.selectedHand!=null){
+                this.currentComponent="app-win-or-defeat"
+            }
+            else{
+                alert(this.selectedHand);
+            }
+        }
+    }
 }
 </script>
 

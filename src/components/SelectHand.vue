@@ -1,7 +1,7 @@
 <template>
     <div class="select-hand">
         <app-hand-options :selectedHand="selectedHand"></app-hand-options>
-        <app-confirm-button :selectedHand="selectedHand" ></app-confirm-button>
+        <app-confirm-button :selectedHand="selectedHand" :currentComponent="currentComponent" ></app-confirm-button>
     </div>
 </template>
 
@@ -11,10 +11,10 @@
 import HandOptions from "./HandOptions.vue"
 import ConfirmButton from "./ConfirmButton.vue"
 export default {
-     props:["selectedHand"],
+     props:["selectedHand","currentComponent"],
      components:{
          appHandOptions:HandOptions,
          appConfirmButton:ConfirmButton,
-     }
+     },
 }
 </script>
