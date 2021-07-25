@@ -1,9 +1,21 @@
 <template>
   <div id="app">
+    <app-score-area></app-score-area>
+
 
   </div>
 </template>
 
-<style lang="scss">
+<script>
+import ScoreArea from "./components/ScoreArea.vue"
+export default {
+  components:{
+    appScoreArea:ScoreArea,
+  }
+}
+</script>
 
+
+<style lang="scss">
+@import "./assets/scss/app.scss"
 </style>
