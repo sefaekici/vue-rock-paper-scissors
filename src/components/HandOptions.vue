@@ -38,6 +38,7 @@ export default {
             justify-content: center;
             background: $buttons-background-color;
             transition: opacity .3s;
+            cursor: pointer;
             &:hover{
                 opacity: .7;
             }
